@@ -66,7 +66,7 @@ var plugin = function(options) {
       for (var rename in renames) {
         if (renames.hasOwnProperty(rename)) {
           var regex = new RegExp('\\b' + rename + '\\b', 'g');
-          contents = contents.split(regex).join(renames[rename]);
+          contents = contents.replace(regex, renames[rename]);
         }
       }
       file.contents = new Buffer(contents);
